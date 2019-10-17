@@ -198,6 +198,7 @@ class PaymentMethod extends \Magento\Payment\Model\Method\AbstractMethod
         {
             /** @var \Magento\Sales\Model\Order\Payment $payment */
             $order = $payment->getOrder();
+            $order->setTotalPaid($amount);
             $orderId = $order->getIncrementId();
 
             $request = $this->getPostData();
